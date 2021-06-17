@@ -1,0 +1,37 @@
+ion-fab-button {
+  margin-bottom: 100px;
+}
+
+ion-item{
+  background: transparent !important;
+  --background: transparent !important;
+}
+
+.icon-start-success {
+  padding: 10px;
+  font-size: 40px;
+  margin: 0 20px 0 0;
+  background: rgba(var(--ion-color-success-rgb), 0.1) !important;
+  border-radius: 8px;
+}
+
+.icon-start-danger {
+  padding: 10px;
+  font-size: 40px;
+  margin: 0 20px 0 0;
+  background: rgba(var(--ion-color-danger-rgb), 0.1) !important;
+  border-radius: 8px;
+}
+
+.icon-start-warning {
+  padding: 10px;
+  font-size: 40px;
+  margin: 0 20px 0 0;
+  background: rgba(var(--ion-color-warning-rgb), 0.1) !important;
+  border-radius: 8px;
+}
+
+.card-item{
+  margin:8px 10px;
+  padding: 5px 10px;
+}

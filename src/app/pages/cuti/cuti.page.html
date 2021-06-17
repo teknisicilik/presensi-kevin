@@ -1,0 +1,65 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-title>Daftar Cuti</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logOut()">
+        <ion-icon slot="icon-only" name="arrow-redo-sharp"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-card
+      mode="ios"
+      class="ion-no-padding card-item"
+      *ngFor="let cuti of cutis"
+    >
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-icon
+          [name]="cuti?.status_verifikasi_id == 1 ? 'help-circle-sharp' : cuti?.status_verifikasi_id == 2 ? 'checkmark-circle-sharp' : 'close-circle-sharp'"
+          slot="start"
+          [color]="cuti?.status_verifikasi_id == 1 ? 'warning' : cuti?.status_verifikasi_id == 2 ? 'success' : 'danger'"
+          [class]="cuti?.status_verifikasi_id == 1 ? 'icon-start-warning' : cuti?.status_verifikasi_id == 2 ? 'icon-start-success' : 'icon-start-danger'"
+        ></ion-icon>
+        <ion-label>
+          {{formatTanggal(cuti?.tanggal_awal)}} -
+          {{formatTanggal(cuti?.tanggal_akhir)}}
+          <p class="ion-text-wrap">
+            {{cuti?.deskripsi ? cuti?.deskripsi : '-'}}
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-card>
+
+    <!-- <ion-card mode="ios" class="ion-no-padding card-item">
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-icon
+          name="close-circle-sharp"
+          slot="start"
+          color="danger"
+          class="icon-start-danger"
+        ></ion-icon>
+        <ion-label>
+          01 Janurai 2020 - 01Februari 2020
+          <p class="ion-text-wrap">
+            Keluarga sakit, harus ditunggu di rumah sakit..
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-card> -->
+  </ion-list>
+
+  <ion-fab
+    vertical="bottom"
+    horizontal="end"
+    edge
+    slot="fixed"
+    (click)="onClick()"
+  >
+    <ion-fab-button color="primary">
+      <ion-icon name="add-sharp"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

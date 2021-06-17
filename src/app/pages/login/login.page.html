@@ -1,0 +1,23 @@
+<ion-content>
+  <ion-img class="ion-margin-vertical logo" src="http://localhost:8086/media/logos/download.png"></ion-img>
+
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <ion-item class="ion-margin" lines="none">
+      <ion-icon color="primary" slot="start" name="person"></ion-icon>
+      <ion-label position="stacked">Username</ion-label>
+      <ion-input required formControlName="username" type="text"></ion-input>
+    </ion-item>
+    <ion-item class="ion-margin" lines="none">
+      <ion-icon color="primary" slot="start" name="lock-closed"></ion-icon>
+      <ion-label position="stacked">Password </ion-label>
+      <ion-input required formControlName="password" [type]="passwordType"></ion-input>
+      <ion-icon class="ion-align-self-center" color="primary" slot="end" [name]="iconType" (click)="showHidePassword()"></ion-icon>
+    </ion-item>
+    <ion-button size="large" class="ion-margin submit-button" expand="block" color="primary" type="submit" [disabled]="loginForm.invalid">
+      Login
+    </ion-button>
+  </form>
+
+  <!-- <ion-img src="/assets/login-graphic.svg" class="img-footer"></ion-img> -->
+
+</ion-content>

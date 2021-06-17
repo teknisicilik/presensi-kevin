@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button [defaultHref]="'/list/' + model"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{model | titlecase}} Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list >
+    <ion-grid fixed>
+      <ion-item *ngFor="let item of data ; let i = index">        
+          <ion-col size="5" class="ion-text-bold">
+            {{item.label | titlecase}}
+          </ion-col>
+          <ion-col size="7"> : {{item?.value ? item?.value : ''}} </ion-col>
+      </ion-item>
+    </ion-grid>
+
+    <!-- <div *ngFor="let item of data | keyvalue">
+      Key: <b>{{item.key}}</b> and Value: <b>{{item.value}}</b>
+    </div> -->
+  </ion-list>
+</ion-content>
