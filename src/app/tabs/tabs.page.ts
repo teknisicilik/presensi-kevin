@@ -9,7 +9,6 @@ import {
   LoadingController,
   ToastController,
 } from '@ionic/angular';
-import { SpeechPage } from './../modal/speech/speech.page';
 
 import * as moment from 'moment';
 

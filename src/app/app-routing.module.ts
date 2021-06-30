@@ -13,11 +13,6 @@ const routes: Routes = [
       import('./pages/home/home.module').then((m) => m.HomePageModule),
   },
   {
-    path: 'speech',
-    loadChildren: () =>
-      import('./modal/speech/speech.module').then((m) => m.SpeechPageModule),
-  },
-  {
     path: 'tabs',
     loadChildren: () =>
       import('./tabs/tabs.module').then((m) => m.TabsPageModule),

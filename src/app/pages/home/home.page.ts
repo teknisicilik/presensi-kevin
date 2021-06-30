@@ -1,10 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService, Message } from '../../services/data.service';
 import {
-  SpeechRecognition,
-  SpeechRecognitionListeningOptions,
-} from '@ionic-native/speech-recognition/ngx';
-import {
   ModalController,
   Platform,
   AnimationController,
