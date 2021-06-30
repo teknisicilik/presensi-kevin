@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Presensi Mandiri</string>
+    <string name="title_activity_main">Presensi Mandiri</string>
+    <string name="package_name">com.presensi</string>
+    <string name="custom_url_scheme">com.presensi</string>
+</resources>

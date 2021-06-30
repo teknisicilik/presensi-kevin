@@ -10,7 +10,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-card mode="ios" class="ion-no-padding" style="margin-top: 100px">
+  <ion-card mode="ios" class="ion-no-padding">
     <ion-card-header>
       <ion-card-title class="ion-text-center">Selamat datang</ion-card-title>
     </ion-card-header>
@@ -64,4 +64,48 @@
       </ion-grid>
     </ion-card-content>
   </ion-card>
+
+  <ion-list style="margin-bottom: 50px;">
+    <ion-item-divider>
+      <ion-label>History Presensi</ion-label>
+    </ion-item-divider>
+
+    <!-- <ion-item>
+      <ion-label>Item Avatar</ion-label>
+    </ion-item> -->
+
+    <ion-item *ngFor="let presensi of presensis">
+      <ion-label>
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="12">{{formatTanggal(presensi?.tanggal)}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="6"
+              ><ion-chip color="success" mode="ios" outline="false">
+                <ion-icon name="time-sharp"></ion-icon>
+                <ion-label
+                  >{{presensi?.scan_masuk ? presensi?.scan_masuk :
+                  '--:--'}}</ion-label
+                >
+              </ion-chip></ion-col
+            >
+            <ion-col size="6"><ion-chip color="danger" mode="ios" outline="false">
+                <ion-icon name="time-sharp"></ion-icon>
+                <ion-label
+                  >{{presensi?.scan_keluar ? presensi?.scan_keluar :
+                  '--:--'}}</ion-label
+                >
+              </ion-chip></ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-label>
+
+      <ion-badge
+        slot="end"
+        [color]="presensi.status_presensi_id == '1' ? 'success' : 'danger'"
+        >{{presensi?.nama_status_presensi}}</ion-badge
+      >
+    </ion-item>
+  </ion-list>
 </ion-content>

@@ -30,7 +30,7 @@ export class PresensiPage implements OnInit {
       .then((res) => {
         if (res.data) {
           this.presensis = res.data;
-          console.log(this.presensis);
+          console.log("presensi lis :",this.presensis);
         }
       })
       .catch((err) => {
