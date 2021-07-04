@@ -4,9 +4,20 @@
       (click)="presensi()"
       [disabled]="status_presensi?.jam_masuk && status_presensi?.jam_keluar"
       [color]="status_presensi?.jam_masuk ? 'danger' : 'green'"
+      *ngIf="!status_presensi?.jam_masuk || !status_presensi?.jam_keluar"
     >
       <ion-icon color="light" name="finger-print"></ion-icon>
     </ion-fab-button>
+
+    <ion-fab-button
+      *ngIf="status_presensi?.jam_masuk && status_presensi?.jam_keluar"
+      color="green"
+      class="ion-no-ripple"
+    >
+      
+      <ion-icon color="light" name="checkmark"></ion-icon>
+    </ion-fab-button>
+
   </ion-fab>
 
   <ion-tab-bar slot="bottom" class="ion-no-border">

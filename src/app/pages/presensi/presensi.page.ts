@@ -30,7 +30,7 @@ export class PresensiPage implements OnInit {
       .then((res) => {
         if (res.data) {
           this.presensis = res.data;
-          console.log("presensi lis :",this.presensis);
+          // console.log("presensi lis :",this.presensis);
         }
       })
       .catch((err) => {
@@ -52,7 +52,7 @@ export class PresensiPage implements OnInit {
     await this.api
       .get(action, param)
       .then((res) => {
-        console.log('Cek presensi : ', res);
+        // console.log('Cek presensi : ', res);
         if (res) {
           this.status_presensi = res;
         }
@@ -69,5 +69,10 @@ export class PresensiPage implements OnInit {
   logOut() {
     localStorage.clear();
     this.navCtrl.navigateRoot(['/login']);
+  }
+
+  errorImage(e){
+    console.log("error image")
+    return (e.target.src = 'assets/image/no-pp.png');
   }
 }

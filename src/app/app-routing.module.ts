@@ -43,14 +43,23 @@ const routes: Routes = [
   // },
   {
     path: 'cuti',
-    loadChildren: () => import('./pages/cuti/cuti.module').then( m => m.CutiPageModule)
+    loadChildren: () =>
+      import('./pages/cuti/cuti.module').then((m) => m.CutiPageModule),
   },
   {
     path: 'cuti-add',
-    loadChildren: () => import('./pages/cuti-add/cuti-add.module').then( m => m.CutiAddPageModule)
+    loadChildren: () =>
+      import('./pages/cuti-add/cuti-add.module').then(
+        (m) => m.CutiAddPageModule
+      ),
   },
-
-
+  {
+    path: 'cuti-detail/:id',
+    loadChildren: () =>
+      import('./pages/cuti-detail/cuti-detail.module').then(
+        (m) => m.CutiDetailPageModule
+      ),
+  },
 ];
 
 @NgModule({

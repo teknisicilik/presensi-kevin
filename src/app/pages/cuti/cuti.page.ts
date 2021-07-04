@@ -55,6 +55,10 @@ export class CutiPage implements OnInit {
     return await modal.present();
   }
 
+  goDetail(id) {
+    this.navCtrl.navigateForward([`/cuti-detail/${id}`]);
+  }
+
   formatTanggal(tanggal) {
     return moment(tanggal).locale('id').format('DD MMMM YYYY');
   }

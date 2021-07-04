@@ -1,0 +1,53 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/cuti"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detail Cuti</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-icon name="calendar" color="success" slot="start"></ion-icon>
+      <ion-label>
+        Tanggal Mulai
+        <p>{{formatTanggal(data?.tanggal_awal)}}</p>
+      </ion-label>
+    </ion-item>
+
+    
+    <ion-item>
+      <ion-icon name="calendar" color="danger" slot="start"></ion-icon>
+      <ion-label>
+        Tanggal Selesai
+        <p>{{formatTanggal(data?.tanggal_akhir)}}</p>
+      </ion-label>
+    </ion-item>
+
+    
+    <ion-item>
+      <ion-icon
+          [name]="data?.status_verifikasi_id == 1 ? 'help-circle-sharp' : data?.status_verifikasi_id == 2 ? 'checkmark-circle-sharp' : 'close-circle-sharp'"
+          slot="start"
+          [color]="data?.status_verifikasi_id == 1 ? 'warning' : data?.status_verifikasi_id == 2 ? 'success' : 'danger'"
+          [class]="data?.status_verifikasi_id == 1 ? 'icon-start-warning' : data?.status_verifikasi_id == 2 ? 'icon-start-success' : 'icon-start-danger'"
+        ></ion-icon>
+      <ion-label>
+        Status Verifikasi
+      </ion-label>
+      <ion-badge [color]="data?.status_verifikasi_id == 1 ? 'warning' : data?.status_verifikasi_id == 2 ? 'success' : 'danger'" mode="ios">{{data?.nama_status_verifikasi_id}}</ion-badge>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="document-text" slot="start"></ion-icon>
+      <ion-label>
+        Keterangan
+        <p  class="ion-text-wrap">{{data?.deskripsi ? data?.deskripsi : '-'}}</p>
+      </ion-label>
+    </ion-item>
+
+
+  </ion-list>
+</ion-content>

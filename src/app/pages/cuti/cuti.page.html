@@ -16,7 +16,7 @@
       class="ion-no-padding card-item"
       *ngFor="let cuti of cutis"
     >
-      <ion-item lines="none" class="ion-no-padding">
+      <ion-item lines="none" class="ion-no-padding" (click)="goDetail(cuti?.id)" detail>
         <ion-icon
           [name]="cuti?.status_verifikasi_id == 1 ? 'help-circle-sharp' : cuti?.status_verifikasi_id == 2 ? 'checkmark-circle-sharp' : 'close-circle-sharp'"
           slot="start"

@@ -44,3 +44,12 @@
 .icon-berhasil{
   
 }
+
+.ion-no-shadow {
+  box-shadow: none !important;
+  --box-shadow: none !important;
+}
+
+.ion-no-ripple {
+  --ripple-color: transparent;
+}

@@ -50,7 +50,7 @@ export class TabsPage implements OnInit {
     await this.api
       .get(action, param)
       .then((res) => {
-        console.log('Cek presensi : ', res);
+        // console.log('Cek presensi : ', res);
         if (res) {
           this.status_presensi = res;
         }
@@ -82,12 +82,13 @@ export class TabsPage implements OnInit {
     };
     await this.api
       .post(action, param, body)
-      .then((res) => {
+      .then(async(res) => {
         loading.dismiss();
-        console.log('Add presensi : ', res);
+        // console.log('Add presensi : ', res);
         if (res) {
           this.presentToast(res.message, 'success');
           // this.status_presensi = res;
+          await this.cekPresensi();
         }
       })
       .catch((err) => {

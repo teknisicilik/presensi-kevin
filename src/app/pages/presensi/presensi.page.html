@@ -10,14 +10,14 @@
 </ion-header>
 
 <ion-content>
-  <ion-card mode="ios" class="ion-no-padding">
+  <ion-card mode="ios" class="ion-no-padding card-profile">
     <ion-card-header>
       <ion-card-title class="ion-text-center">Selamat datang</ion-card-title>
     </ion-card-header>
     <ion-card-content class="ion-no-margin">
       <ion-item lines="none" class="ion-no-padding">
         <ion-avatar slot="start">
-          <img [src]="status_presensi?.img_photo_karyawan?.url" />
+          <ion-img [src]="status_presensi?.img_photo_karyawan?.url" (ionError)="errorImage($event)"></ion-img>
         </ion-avatar>
         <ion-label>
           <h1>
@@ -67,7 +67,11 @@
 
   <ion-list style="margin-bottom: 50px;">
     <ion-item-divider>
-      <ion-label>History Presensi</ion-label>
+      <ion-label>
+        <ion-text>
+          <h1>Riwayat Presensi</h1>
+        </ion-text>
+      </ion-label>
     </ion-item-divider>
 
     <!-- <ion-item>

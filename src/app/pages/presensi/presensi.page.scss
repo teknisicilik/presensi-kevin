@@ -3,12 +3,21 @@ ion-avatar {
   height: 50px;
 }
 
-ion-card-header{
-    border-bottom: 1px solid #e2e2e2;
-    margin: 0 10px;
-    padding: 13px 13px 10px 13px;
+ion-card-header {
+  border-bottom: 1px solid #e2e2e2;
+  margin: 0 10px;
+  padding: 13px 13px 10px 13px;
 }
 
-ion-card-content{
-    padding-top: 10px;
+ion-card-content {
+  padding-top: 10px;
+}
+
+.card-profile {
+  position: -webkit-sticky;
+  position: sticky;
+  top: -9%;
+  width: auto;
+  margin: auto;
+  z-index: 9999;
 }
